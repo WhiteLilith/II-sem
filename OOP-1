@@ -101,3 +101,35 @@ cout << a << Sum/240 << endl;
 
 
 11)
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+int main() 
+{ 
+cout << setw(20) << setiosflags(ios::left) << "Фамилия" << setw(15) << setiosflags(ios::left) << "Имя" << setw(20) << setiosflags(ios::left) << "Адрес" << setw(8) << setiosflags(ios::left) << "Город\n"; 
+cout << setw(19) << setiosflags(ios::left) << "Петров" << setw(19) << setiosflags(ios::left) << "Василий" << setw(23) << setiosflags(ios::left) << "Кленовая 16" << setw(15) << setiosflags(ios::left) << "Санкт-Петербург\n"; 
+cout << setw(19) << setiosflags(ios::left) << "Иванов" << setw(18) << setiosflags(ios::left) << "Сергей" << setw(23) << setiosflags(ios::left) << "Осиновая 3" << setw(15) << setiosflags(ios::left) << "Находка\n"; 
+cout << setw(20) << setiosflags(ios::left) << "Сидоров" << setw(16) << setiosflags(ios::left) << "Иван" << setw(24) << setiosflags(ios::left) << "Березовая 21" << setw(18) << setiosflags(ios::left) << "Калининград\n"; 
+return 0; 
+}
+
+
+
+12)
+#include <iostream>
+using namespace std;
+int main()
+{
+string a = "£";
+float Sum;
+int F, S, P;
+cout << "Введите десятичную запись фунтов - ";
+cin >> Sum;
+F = (int)Sum;
+S = (Sum*100) - F*100;
+S = S*240/100;
+P = S%12;
+S = S/12;
+cout << a << F << "." << S << "." << P;
+return 0;
+}
