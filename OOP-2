@@ -74,16 +74,18 @@ int main(){
   cout << "Введите вторую сумму:\n";
   cin >> f_new >> s_new >> p_new;
   p_new = p_old + p_new;
-  if (p_new > 11){ 
-  s_new = s_old + s_new + 1;
-  p_new = p_new - 12;
+  s_new = s_old + s_new;
+  f_new = f_old + f_new;
+  while(p_new > 11)
+  {
+    s_new++;
+    p_new = p_new - 12;
   }
-  else s_new = s_old + s_new;
-  if (s_new > 19){
-  f_new = f_old + f_new + 1;
-  s_new = s_new - 20;
+  while(s_new > 19)
+  {
+    f_new++;
+    s_new = s_new - 20;
   }
-  else f_new = f_old + f_new;
   cout << "Всего: " << a << f_new << " " << s_new << " " << p_new << endl;
   cout << "Продолжить сложение?(+/-)\n";
   cin >> f;
@@ -155,8 +157,8 @@ int main(){
       f = f*z;
       s = s*z;
       p = p*z;
-      if (p>11){s++; p = p - 12;}
-      if (s>19){f++; s = s - 20;}
+      while (p>11){s++; p = p - 12;}
+      while (s>19){f++; s = s - 20;}
       break;
     }
     case '+':
@@ -168,8 +170,8 @@ int main(){
       s = s + s1;
       cin >> p1;
       p = p + p1;
-      if (p>11){s++; p = p - 12;}
-      if (s>19){f++; s = s - 20;}
+      while (p>11){s++; p = p - 12;}
+      while (s>19){f++; s = s - 20;}
       break;
     }
     case '-':
