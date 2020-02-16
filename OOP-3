@@ -1,0 +1,58 @@
+4) 
+#include <iostream>
+using namespace std;
+struct employee
+{int number;
+float salary;
+};
+int main() {
+  int i;
+ employee n1, n2, n3;
+ cout << "Введите номер сотрудника: " << endl;
+ cin >> n1.number;
+ cout << "Введите размер оклада сотрудника: " << endl;
+ cin >> n1.salary;
+ cout << "Введите номер сотрудника: " << endl;
+ cin >> n2.number;
+ cout << "Введите размер оклада сотрудника: " << endl;
+ cin >> n2.salary;
+ cout << "Введите номер сотрудника: " << endl;
+ cin >> n3.number;
+ cout << "Введите размер оклада сотрудника: " << endl;
+ cin >> n3.salary;
+ cout << "Номер сотрудника: " << n1.number << endl;
+ cout << "Оклад сотрудника: " << n1.salary << endl;
+ cout << "Номер сотрудника: " << n2.number << endl;
+ cout << "Оклад сотрудника: " << n2.salary << endl;
+ cout << "Номер сотрудника: " << n3.number << endl;
+ cout << "Оклад сотрудника: " << n3.salary << endl;
+}
+
+
+
+
+5)
+#include <iostream>
+using namespace std;
+struct date
+{ int d, m, y;
+};
+int main() {
+  date n1;
+  char a;
+cout << "Введите дату в формате день/месяц/год: ";
+cin >> n1.d >> a >> n1.m >> a >> n1.y;
+if (n1.d < 10)
+cout << "Дата: " << "0" << n1.d << a;
+else
+cout << "Дата: " << n1.d << a;
+if (n1.m < 10)
+cout << "0" << n1.m << a << n1.y;
+else 
+cout << n1.m << a << n1.y;
+}
+
+
+
+
+6)
