@@ -56,3 +56,150 @@ cout << n1.m << a << n1.y;
 
 
 6)
+#include <iostream> 
+using namespace std; 
+enum etype { laborer, secretary, manager, accountant, executive, researcher }; 
+int main() 
+{ 
+etype number; 
+char a; 
+cout << "Введите первую букву должности: "; 
+cin >> a; 
+switch (a) 
+{ 
+case 'l': 
+number = laborer; 
+break; 
+case 's': 
+number = secretary; 
+break; 
+case 'm': 
+number = manager; 
+break; 
+case 'a': 
+number = accountant; 
+break; 
+case 'e': 
+number = executive; 
+break; 
+case 'r': 
+number = researcher; 
+break; 
+} 
+cout << "Полное название должности: "; 
+switch (number) 
+{ 
+case (laborer): 
+cout << "laborer"; 
+break; 
+case (secretary): 
+cout << "secretary"; 
+break; 
+case (manager): 
+cout << "manager"; 
+break; 
+case (accountant): 
+cout << "accountant"; 
+break; 
+case (executive): 
+cout << "executive"; 
+break; 
+case (researcher): 
+cout << "researcher"; 
+break; 
+} 
+}
+
+
+
+7)
+#include <iostream> 
+using namespace std; 
+
+enum etype { laborer, secretary, manager, accountant, executive, researcher }; 
+
+struct Employee{
+int d, m, y, number;
+float salary;
+char job;
+};
+
+int main() 
+{ 
+etype job; 
+Employee n[3];
+char a, f; 
+int i;
+for (i=1; i<=3; i++)
+{
+cout << "Введите номер сотрудника: ";
+cin >> n[i].number;
+cout << "Введите величину оклада сотрудника: ";
+cin >> n[i].salary;
+cout << "Введите первую букву должности: "; 
+cin >> a;
+switch (a) 
+{ 
+case 'l': 
+n[i].job = laborer; 
+break; 
+case 's': 
+n[i].job = secretary; 
+break; 
+case 'm': 
+n[i].job = manager; 
+break; 
+case 'a': 
+n[i].job = accountant; 
+break; 
+case 'e': 
+n[i].job = executive; 
+break; 
+case 'r': 
+n[i].job = researcher; 
+break; 
+} 
+cout << "Введите дату принятия сотрудника на работу(dd/mm/yyyy): ";
+cin >> n[i].d >> f >> n[i].m >> f >> n[i].y;
+cout << endl << endl; 
+}
+cout << endl;
+for (i=1; i<=3; i++)
+{
+cout << "Номер сотрудника: " << n[i].number << endl;
+cout << "Зарплата: "  << n[i].salary << endl;
+cout << "Должность: "; 
+switch (n[i].job) 
+{ 
+case (laborer): 
+cout << "laborer"; 
+break; 
+case (secretary): 
+cout << "secretary"; 
+break; 
+case (manager): 
+cout << "manager"; 
+break; 
+case (accountant): 
+cout << "accountant"; 
+break; 
+case (executive): 
+cout << "executive"; 
+break; 
+case (researcher): 
+cout << "researcher"; 
+break; 
+}
+cout << endl;
+if (n[i].d < 10)
+cout << "Дата: " << "0" << n[i].d << f;
+else
+cout << "Дата: " << n[i].d << f;
+if (n[i].m < 10)
+cout << "0" << n[i].m << f << n[i].y;
+else 
+cout << n[i].m << f << n[i].y; 
+cout << endl;
+cout << endl << endl; 
+}
+}
