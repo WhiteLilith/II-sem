@@ -256,3 +256,96 @@ int main(){
 
 
 10)
+#include <iostream>
+using namespace std;
+
+struct sterling{
+int F, S, P;
+};
+
+int main(){
+double D;
+sterling bb;
+cout << "Введите сумму в десятичных фунтах: £";
+cin >> D;
+bb.F = (int)D;
+bb.S = ((D*100) - bb.F*100)*2.4;
+bb.P = bb.S%12;
+bb.S = bb.S/12;
+cout << endl << "В старой системе сумма сотставляет: £" << bb.F << "." << bb.S << "." << bb.P;
+}
+
+
+
+11)
+#include <iostream>
+using namespace std;
+
+struct time{
+int h, m, s;
+long totalsecs;
+};
+
+int main(){
+struct time n[3];
+char dummydum;
+for (int i=0; i<=1; i++)
+{
+  cout << "Введите время в формате HH:MM:SS : ";
+  cin >> n[i].h >> dummydum >> n[i].m >> dummydum >> n[i].s;
+  cout << endl;
+  n[i].totalsecs = n[i].h * 3600 + n[i].m * 60 + n[i].s;
+}
+n[2].totalsecs = n[1].totalsecs + n[0].totalsecs;
+n[2].h = n[2].totalsecs/3600;
+n[2].m = (n[2].totalsecs - n[2].h*3600)/60;
+n[2].s = n[2].totalsecs - n[2].h * 3600 - n[2].m * 60;
+cout << "Новое время: " << n[2].h << dummydum << n[2].m << dummydum << n[2].s << endl;
+}
+
+
+
+
+12)
+#include <iostream>
+using namespace std;
+
+struct fraction{
+int a,b;
+};
+
+int main(){
+  fraction n[2];
+  char r = '+', dummydum, oper;
+  while (r == '+')
+  {
+    cout << "Введите дробь в формате a/b: ";
+    cin >> n[0].a >> dummydum >> n[0].b;
+    cout << "Введите операцию(+/-/*/:): ";
+    cin >> oper;
+    cout << "Введите дробь в формате a/b: ";
+    cin >> n[1].a >> dummydum >> n[1].b;
+    switch (oper){
+      case '+': 
+      if (n[1].b != n[0].b)
+      cout << "Сумма двух дробей: " << (n[0].a*n[1].b) + (n[1].a*n[0].b) << dummydum << n[0].b*n[1].b << endl;
+      else
+      cout << "Сумма двух дробей: " << n[0].a + n[1].a << dummydum << n[1].b << endl;
+      break;
+      case '-':
+      if (n[1].b != n[0].b)
+      cout << "Разность двух дробей: " << (n[0].a*n[1].b) - (n[1].a*n[0].b) << dummydum << n[0].b*n[1].b << endl;
+      else
+      cout << "Разность двух дробей: " << n[0].a - n[1].a << dummydum << n[1].b << endl;
+      break;
+      case '*':
+      cout << "Произведение двух дробей равно: " << n[0].a*n[1].a << dummydum << n[0].b * n[1].b << endl;
+      break;
+      case '/':
+      cout << "Частное двух дробей равно: " << n[0].a * n[1].b << dummydum << n[0].b * n[1].a << endl;
+      break;
+    }
+      cout << "Хотите провести еще одну операцию(+/-)? Ответ: ";
+      cin >> r;
+  }
+}
