@@ -1,0 +1,146 @@
+5)
+#include <iostream>
+using namespace std;
+
+long hms_to_secs(int h, int m, int s){
+  long hms = h*3600 + m*60 + s;
+  return hms;
+}
+
+int main(){
+  char a, b;
+  int h, m, s;
+  while (b != '-'){
+  cout << "Введите время в формате HH:MM:SS : ";
+  cin >> h >> a >> m >> a >> s;
+  cout << endl << "Время в секундах: " << hms_to_secs(h, m, s) << endl << "Хотите перевести еще одно время(+/-)? Ответ: ";
+  cin >> b;
+  }
+}
+
+
+
+
+6)
+#include <iostream>
+using namespace std;
+
+long hms_to_secs(int h, int m, int s){
+  long hms = h*3600 + m*60 + s;
+  return hms;
+}
+
+int secs_to_time(long seconds){
+int h = seconds/3600;
+int m = (seconds - h*3600)/60;
+int s = seconds - h*3600 - m*60;
+cout << h << ":" << m << ":";
+return s;
+}
+
+struct time{
+int h, m, s, longt;
+};
+
+int main(){
+  char a, b, c;
+  struct time t;
+  while (b != '-'){
+  cout << "Введите операцию(s - seconds to time, t - time to seconds): ";
+  cin >> c;
+  if (c == 't')
+  {
+  cout << "Введите время в формате HH:MM:SS : ";
+  cin >> t.h >> a >> t.m >> a >> t.s;
+  cout << endl << "Время в секундах: " << hms_to_secs(t.h, t.m, t.s) << endl << "Хотите перевести еще одно время(+/-)? Ответ: ";
+  cin >> b;
+  }
+  else
+  {
+  cout << "Введите количество секунд: ";
+  cin >> t.longt;
+  cout << "Время: " << secs_to_time(t.longt) << endl << "Хотите перевести еще одно время(+/-)? Ответ: ";
+  cin >> b;
+  }
+  }
+}
+
+
+
+
+7)
+#include <iostream>
+using namespace std;
+
+double power(double n, int p){
+double result = 1.0;
+for (int j=0; j<p; j++)
+result *= n;
+return result;
+}
+
+int power(int n, int p){
+  int result = 1;
+  for (int j=0; j<p; j++)
+  result *= n;
+  return result;
+}
+
+char power(char n, int p){
+  char result = n;
+  for (int j=1; j<p; j++)
+  for (int i=0; i<j; i++)
+  cout << n;
+  return result;
+}
+
+float power(float n, int p){
+  float result = 1;
+  for (int j=0; j<p; j++)
+  result *= n;
+  return result;
+}
+
+long power(long n, int p){
+  long result = 1;
+  for (int j=0; j<p; j++)
+  result *= n;
+  return result;
+}
+
+int main(){
+  double d;
+  float f;
+  long l;
+  int i;
+  char c;
+  int p;
+  cout << "Введите степень: ";
+  cin >> p;
+  cout << endl;
+  cout << "Введите переменную типа double: ";
+  cin >> d;
+  cout << power(d,p);
+  cout << endl << endl;
+  cout << "Введите переменную типа float: ";
+  cin >> f;
+  cout << power(f,p);
+  cout << endl << endl;
+  cout << "Введите переменную типа long: ";
+  cin >> l;
+  cout << power(l,p);
+  cout << endl << endl;
+  cout << "Введите переменную типа int: ";
+  cin >> i;
+  cout << power(i,p);
+  cout << endl << endl;
+  cout << "Введите переменную типа char: ";
+  cin >> c;
+  cout << power(c,p);
+  cout << endl;
+}
+
+
+
+
+8)
