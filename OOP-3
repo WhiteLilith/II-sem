@@ -203,3 +203,56 @@ cout << endl;
 cout << endl << endl; 
 }
 }
+
+
+
+
+8)
+#include <iostream>
+using namespace std;
+
+struct fraction{
+int a;
+int b;
+};
+
+int main(){
+fraction n[2];
+char dummydum;
+int i;
+for (i=0; i<=1; i++)
+{
+cout << "Введите дробь в формате a/b: ";
+cin >> n[i].a >> dummydum >> n[i].b;
+cout << endl;
+}
+if (n[1].b != n[0].b)
+cout << "Сумма двух дробей: " << (n[0].a*n[1].b) + (n[1].a*n[0].b) << dummydum << n[0].b*n[1].b;
+else
+cout << "Сумма двух дробей: " << n[0].a + n[1].a << dummydum << n[1].b;
+}
+
+
+
+
+9)
+#include <iostream>
+using namespace std;
+
+struct time{
+int hours, minutes, seconds;
+};
+
+int main(){
+  struct time t1;
+  char dummydum;
+  cout << "Введите время в формате HH:MM:SS : ";
+  cin >> t1.hours >> dummydum >> t1.minutes >> dummydum >> t1.seconds;
+  cout << endl;
+  long totalsecs = t1.hours*3600 + t1.minutes*60 + t1.seconds;
+  cout << totalsecs;
+}
+
+
+
+10)
