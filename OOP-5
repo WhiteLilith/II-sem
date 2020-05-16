@@ -175,3 +175,59 @@ n3.outter();
 
 
 7)
+#include <iostream>
+using namespace std;
+
+class angle{
+private:
+int deg;
+float min;
+char dir;
+public:
+angle(int d, float m, char di){
+  deg = d;
+  min = m;
+  dir = di;
+}
+void inner(int d, float m, char di){
+  cout << "Введите направление(N/S/W/E): ";
+  cin >> di;
+  cout << "Введите градусы: ";
+  cin >> d;
+  cout << "Введите минуты: ";
+  cin >> m;
+  dir = di;
+  deg = d;
+  min = m;
+  cout << endl;
+}
+void outter(){
+  cout << endl << deg << "°" << min << "\' " << dir << endl;
+}
+};
+
+void mainQ(int d, float m, char di){
+angle n1(179, 89.9, 'S');
+char a;
+a = '+';
+n1.outter();
+while (a != '-'){
+  cout << endl << "Хотите внести другие координаты?(+/-) ";
+  cin >> a;
+  if (a != '-'){
+    n1.inner(d, m, di);
+    n1.outter();
+  }
+}
+}
+
+int main() {
+  int d;
+  float m;
+  char di;
+  mainQ(d, m, di);
+}
+
+
+
+8)
