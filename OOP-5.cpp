@@ -231,3 +231,27 @@ int main() {
 
 
 8)
+#include <iostream>
+using namespace std;
+
+class counter{
+  int count;
+  public:
+  static int c;
+  counter(int count){
+    cout << endl << endl <<  "Задайте объект: ";
+    cin >> count;
+    cout << endl << "Мой порядковый номер " << ++c << endl;
+  }
+};
+
+int counter::c = 0;
+
+int main(){
+  counter c1(1), c2(2), c3(3);
+}
+
+
+
+
+9)
