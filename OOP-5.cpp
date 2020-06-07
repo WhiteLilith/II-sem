@@ -7,7 +7,7 @@ class employee{
   int number;
   float salary;
   public:
-  void inner(int number_new, float salary_new){
+  void inner(){
     cout << endl << "Введите номер сотрудника: ";
     cin >> number_new;
     cout << "Введите размер оклада сотрудника: ";
