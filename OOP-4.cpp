@@ -8,7 +8,7 @@ long hms_to_secs(int h, int m, int s){
 }
 
 int main(){
-  char a, b;
+  char a, b = '+';
   int h, m, s;
   while (b != '-'){
   cout << "Введите время в формате HH:MM:SS : ";
