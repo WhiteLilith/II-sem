@@ -7,39 +7,33 @@
 
 using namespace std;
 
-struct link //one element of list
+struct link
 {
-	int data; //data item
-	link* next; //pointer to next link
+	int data;
+	link* next;
 };
 
-////////////////////////////////////////////////////////////////
-
-class linklist //a list of links
+class linklist
 {
-
 private:
-
-	link* first; //pointer to first link
+	link* first;
 
 public:
-	linklist() //no-argument constructor
+	linklist()
 	{
 		first = NULL;
-	} //no first link
+	}
 
-	void additem(int d); //add data item (one link)
+	void additem(int d);
 
-	void display(); //display all links
+	void display();
 
 };
 
-//--------------------------------------------------------------
-
-void linklist::additem(int d) //add data item
+void linklist::additem(int d)
 {
-	link* newlink = new link; //make a new link
-	newlink->data = d; //give it data
+	link* newlink = new link;
+	newlink->data = d;
 
 	if (first != NULL)
 	{
@@ -58,34 +52,32 @@ void linklist::additem(int d) //add data item
 	newlink->next = NULL;
 }
 
-//--------------------------------------------------------------
-
-void linklist::display() //display all links
+void linklist::display()
 
 {
-	link* current = first; //set ptr to first link
-	while (current != NULL) //quit on last link
+	link* current = first;
+	while (current != NULL)
 	{
-		cout << current->data << endl; //print data
-		current = current->next; //move to next link
+		cout << current->data << endl;
+		current = current->next;
 	}
 
 }
 
-////////////////////////////////////////////////////////////////
-
 int main()
 
 {
-	linklist li; //make linked list
-	li.additem(45); //add four items to list
+	linklist li;
+
+	li.additem(45);
 	li.additem(13);
 	li.additem(56);
 	li.additem(60);
 	li.additem(19);
 	li.additem(17);
 	li.additem(22);
-	li.display(); //display entire list
+
+	li.display();
 
 	return 0;
 }
