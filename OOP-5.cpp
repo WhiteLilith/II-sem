@@ -46,7 +46,7 @@ private:
 int day, month, year;
 char dummydum;
 public:
-void getdate(int day_new, int month_new, int year_new){
+void getdate(){
   cout << endl << "Введите дату(DD/MM/YY): ";
   cin >> day_new >> dummydum >> month_new >> dummydum >> year_new;
   day = day_new;
@@ -83,7 +83,7 @@ class employee{
   date d;
 
   public:
-  void inner(int number_new, float salary_new, int day_new, int month_new, int year_new, char j){
+  void inner(){
     cout << endl << "Введите номер сотрудника: ";
     cin >> number_new;
 
@@ -189,7 +189,7 @@ angle(int d, float m, char di){
   min = m;
   dir = di;
 }
-void inner(int d, float m, char di){
+void inner(){
   cout << "Введите направление(N/S/W/E): ";
   cin >> di;
   cout << "Введите градусы: ";
@@ -238,7 +238,7 @@ class counter{
   int count;
   public:
   static int c;
-  counter(int count){
+  counter(){
     cout << endl << endl <<  "Задайте объект: ";
     cin >> count;
     cout << endl << "Мой порядковый номер " << ++c << endl;
